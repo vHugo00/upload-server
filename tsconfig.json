@@ -1,13 +1,14 @@
 {
   "$schema": "https://www.schemastore.org/tsconfig",
-  "display": "Node 22",
-  "_version": "22.0.0",
+  "display": "Node 24",
+  "_version": "24.0.0",
   "compilerOptions": {
     "lib": [
       "es2024",
       "ESNext.Array",
       "ESNext.Collection",
-      "ESNext.Iterator"
+      "ESNext.Iterator",
+      "ESNext.Promise"
     ],
     "module": "esnext",
     "target": "esnext",
@@ -20,5 +21,5 @@
         "./src/*"
       ]
     }
-  }
+  },
 }
