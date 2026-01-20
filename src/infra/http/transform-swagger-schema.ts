@@ -1,8 +1,8 @@
 import { jsonSchemaTransform } from 'fastify-type-provider-zod'
 
-type TransformSwaggerSchemaData = Parameters<typeof jsonSchemaTransform>[0]
+type TransformSwaggerSchemaDAta = Parameters<typeof jsonSchemaTransform>[0]
 
-export function transformSwaggerSchema(data: TransformSwaggerSchemaData) {
+export function transformSwaggerSchema(data: TransformSwaggerSchemaDAta) {
   const { schema, url } = jsonSchemaTransform(data)
 
   if (schema.consumes?.includes('multipart/form-data')) {
@@ -10,7 +10,7 @@ export function transformSwaggerSchema(data: TransformSwaggerSchemaData) {
       schema.body = {
         type: 'object',
         required: [],
-        properties: [],
+        properties: {},
       }
     }
 
