@@ -1,3 +1,6 @@
+import { env } from '@/env'
+import { uploadImageRoute } from '@/infra/http/routes/upload-image'
+import { transformSwaggerSchema } from '@/infra/http/transform-swagger-schema'
 import { fastifyCors } from '@fastify/cors'
 import { fastifyMultipart } from '@fastify/multipart'
 import { fastifySwagger } from '@fastify/swagger'
@@ -8,8 +11,6 @@ import {
   serializerCompiler,
   validatorCompiler,
 } from 'fastify-type-provider-zod'
-import { uploadImageRoute } from '@/infra/http/routes/upload-image'
-import { transformSwaggerSchema } from '@/infra/http/transform-swagger-schema'
 
 const server = fastify()
 
@@ -23,6 +24,8 @@ server.setErrorHandler((error, request, reply) => {
       issues: error.validation,
     })
   }
+
+  // Envia o erro p/ alguma ferramenta de observabilidade (Sentry/DataDog/Grafana/OTel)
 
   console.error(error)
 
