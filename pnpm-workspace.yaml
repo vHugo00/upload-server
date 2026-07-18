@@ -1,0 +1,7 @@
+# Decisão de build de dependências (pnpm 11 — allowBuilds).
+# O esbuild já traz o binário pré-compilado via @esbuild/win32-x64,
+# então o postinstall é dispensável. Definimos como `false` para o pnpm
+# NÃO executar o build script (evita o EPERM de rename no Windows) e
+# não tratar isso como pendência (ERR_PNPM_IGNORED_BUILDS).
+allowBuilds:
+  esbuild: false
