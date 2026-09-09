@@ -3,3 +3,6 @@ node_modules
 .env.example
 Dockerfile
 dist
+.git
+.github
+.vscode
