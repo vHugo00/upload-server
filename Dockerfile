@@ -20,7 +20,9 @@ COPY . .
 RUN pnpm build
 RUN pnpm prune --prod
 
-FROM node:20-alpine3.21 AS deploy
+FROM gcr.io/distroless/nodejs22-debian13 AS deploy
+
+USER 1000
 
 WORKDIR /usr/src/app
 
