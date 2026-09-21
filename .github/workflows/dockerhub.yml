@@ -1,4 +1,4 @@
-name: widget-server pipe DockerHub
+name: widget-server pipe Docker Hub
 
 on:
   push:
