@@ -1,4 +1,4 @@
-name: widget-server pipe Docker Hub
+name: widget-server pipe AWS ECR
 
 on:
   push:
