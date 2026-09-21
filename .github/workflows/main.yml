@@ -37,7 +37,8 @@ jobs:
         with:
           content: .
           push: true
-          tags: ${{ vars.ECR_REPOSITORY }}:${{ steps.generate-tag.outputs.sha }}
+          tags: |
+            ${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:${{ steps.generate-tag.outputs.sha }}
 
       # - name: Build and Push Docker Image to Amazon ECR
       #   id: build-and-push-docker-image
